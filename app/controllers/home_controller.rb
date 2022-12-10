@@ -27,4 +27,4 @@ private
     params.require(:link).permit(:url)   
   end   
 
-enda
+end
