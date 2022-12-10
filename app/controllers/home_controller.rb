@@ -1,6 +1,8 @@
 class HomeController < ApplicationController
 
   before_action :authenticate_user!
+  http_basic_authenticate_with name: "clemente", password: "admin2022user", only: :create
+
   
   def index 
     @link= Link.new
