@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
 
-  #before_action :authenticate_user!
+  before_action :authenticate_user!
+  
   def index 
     @link= Link.new
     @firstlink = Link.last
@@ -26,4 +27,4 @@ private
     params.require(:link).permit(:url)   
   end   
 
-end
+enda
