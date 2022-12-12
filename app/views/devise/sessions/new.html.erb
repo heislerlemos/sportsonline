@@ -21,14 +21,14 @@
     <%= f.label :email ,class: "has-text-weight-bold is-size-3  has-text-light " , style: "  text-shadow: 4px 4px black;"%>
     <br>
 
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "input is-primary" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "input is-dark" %>
   </div>
 <br>
   <div class="field">
     <%= f.label :password  ,class: "has-text-weight-bold is-size-3  has-text-light " , style: "  text-shadow: 4px 4px black; "%>
     
     <br>
-    <%= f.password_field :password, autocomplete: "current-password" , class: "input is-primary "%>
+    <%= f.password_field :password, autocomplete: "current-password" , class: "input is-dark "%>
   </div>
 
   <% if devise_mapping.rememberable? %>
@@ -39,7 +39,7 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" , class: "button is-large is-fullwidth" %>
+    <%= f.submit "Aceder" , class: "button is-large is-fullwidth is-dark" %>
   </div>
 <% end %>
 
