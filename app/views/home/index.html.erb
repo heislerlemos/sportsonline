@@ -1,4 +1,9 @@
+<html style="background: radial-gradient(circle at 25% 25%,transparent 14%,#000000 15%, #000000 20%, transparent 21%, transparent 100%), radial-gradient(circle at 75% 75%, transparent 11%, #000000 12%, #000000 17%, transparent 18%);
+        background-size: 1em 1em;
+        background-color: #111111;
+        opacity: 1">
 <%= stylesheet_link_tag "home", :media => "all" %>
+
  <div class="container">
 <section class="hero is-dark">
   <div class="hero-body">
@@ -16,13 +21,13 @@
 
 <!--- i frame container --->
 
-<body style="background-color: hsl(0, 0%, 4%);">
+<body >
 <div class="columns">
   <div class="column">
-   <div class="card">
+   <div class="card" >
   <div class="card-content">
-    <div class="content">
-   <figure class="image is-16by9">
+    <div class="content ">
+   <figure class="image is-16by9 ">
   <iframe class="has-ratio" width="640" height="360" src="<%= @firstlink.url %>" frameborder="0" allowfullscreen>
     
   </iframe>
@@ -35,3 +40,5 @@
 </div>
 </body>
 </div>
+
+</html>
