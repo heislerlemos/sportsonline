@@ -12,6 +12,7 @@
     </p>
   <%= form_with model: @link do |f| %>
  <%= f.text_field :url , class: "input is-link" , style: "width:30%;" %>
+ <%= f.number_field :user_id, id: :link_user_id, value: current_user.id,type: :hidden %>
   <%= f.submit "submeter" , class: "button is-link"   %>
 <% end %>
 
