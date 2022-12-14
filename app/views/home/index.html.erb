@@ -1,18 +1,147 @@
-<html style="background: radial-gradient(circle at 25% 25%,transparent 14%,#000000 15%, #000000 20%, transparent 21%, transparent 100%), radial-gradient(circle at 75% 75%, transparent 11%, #000000 12%, #000000 17%, transparent 18%);
-        background-size: 1em 1em;
-        background-color: #111111;
-        opacity: 1">
+<html >
+<head>
 <%= stylesheet_link_tag "home", :media => "all" %>
+<%= javascript_include_tag "home"%>
+<nav class="navbar is-dark is-small" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://wa.me/945327137">
+      <%= image_tag "logo", style:"box-shadow: 1px 1px;"%>
+    </a>
 
-<a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
-  <span aria-hidden="true"></span>
-  <span aria-hidden="true"></span>
-  <span aria-hidden="true"></span>
-</a>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
 
-<div class="navbar-menu" id="navMenu">
-  <!-- navbar-start, navbar-end... -->
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+         <a class="navbar-item">
+    Canais
+          </a>
+          <div class="navbar-item has-dropdown is-hoverable ">
+            <a class="navbar-link">
+          Sport Tv
+        </a>
+        <div class="navbar-dropdown">
+
+      <a class="navbar-item">
+
+        <%= form_with model: @link do |f| %>
+ <%= f.text_field :url ,  :value => 'https://v3.sportsonline.to/channels/pt/sporttv1.php
+', readonly: true, hidden: true %>
+  <%= f.submit "Sport tv 1" , class: "button is-white is-light"   %>
+  <% end %>
+      </a>
+
+      <a class="navbar-item">
+             <%= form_with model: @link do |f| %>
+ <%= f.text_field :url ,  :value => 'https://v3.sportsonline.to/channels/pt/sporttv2.php', readonly: true, hidden: true %>
+  <%= f.submit "Sport tv 2" , class: "button is-white is-light"   %>
+  <% end %>
+      </a>
+    </div>
+  </div>
+  
+            <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+          Eleven
+        </a>
+        <div class="navbar-dropdown">
+
+         <a class="navbar-item">
+             <%= form_with model: @link do |f| %>
+ <%= f.text_field :url ,  :value => 'https://v3.sportsonline.to/channels/pt/eleven1.php', readonly: true, hidden: true %>
+  <%= f.submit "Eleven 1" , class: "button is-white is-light"   %>
+  <% end %>
+      </a>
+
+          <a class="navbar-item">
+             <%= form_with model: @link do |f| %>
+ <%= f.text_field :url ,  :value => 'https://v3.sportsonline.to/channels/pt/eleven2.php
+', readonly: true, hidden: true %>
+  <%= f.submit "Eleven 2" , class: "button is-white is-light"   %>
+  <% end %>
+      </a>
 </div>
+ </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          SportHD 2 a 9
+        </a>
+
+        <div class="navbar-dropdown">
+             <a class="navbar-item">
+             <%= form_with model: @link do |f| %>
+ <%= f.text_field :url ,  :value => 'https://v3.sportsonline.to/channels/hd/hd2.php
+', readonly: true, hidden: true %>
+  <%= f.submit "SportHD 2" , class: "button is-white is-light"   %>
+  <% end %>
+      </a>
+
+          <a class="navbar-item">
+          <%= form_with model: @link do |f| %>
+ <%= f.text_field :url ,  :value => 'https://v3.sportsonline.to/channels/hd/hd3.php
+', readonly: true, hidden: true %>
+  <%= f.submit "SportHD 3" , class: "button is-white is-light"   %>
+  <% end %>
+          </a>
+          <a class="navbar-item">
+           <%= form_with model: @link do |f| %>
+ <%= f.text_field :url ,  :value => 'https://v3.sportsonline.to/channels/hd/hd4.php
+', readonly: true, hidden: true %>
+  <%= f.submit "SportHD 4" , class: "button is-white is-light"   %>
+  <% end %>
+          </a>
+                   <a class="navbar-item">
+           <%= form_with model: @link do |f| %>
+ <%= f.text_field :url ,  :value => 'https://v3.sportsonline.to/channels/hd/hd5.php
+', readonly: true, hidden: true %>
+  <%= f.submit "SportHD 5" , class: "button is-white is-light"   %>
+  <% end %>
+          </a>
+            <a class="navbar-item">
+           <%= form_with model: @link do |f| %>
+          <%= f.text_field :url ,  :value => 'https://v3.sportsonline.to/channels/hd/hd6.php', readonly: true, hidden: true %>
+           <%= f.submit "SportHD 6" , class: "button is-white is-light"   %>
+        <% end %>
+          </a>
+              <a class="navbar-item">
+           <%= form_with model: @link do |f| %>
+          <%= f.text_field :url ,  :value => 'https://v3.sportsonline.to/channels/hd/hd7.php', readonly: true, hidden: true %>
+           <%= f.submit "SportHD 7" , class: "button is-white is-light"   %>
+        <% end %>
+          </a>
+               <a class="navbar-item">
+           <%= form_with model: @link do |f| %>
+          <%= f.text_field :url ,  :value => 'https://v3.sportsonline.to/channels/hd/hd8.php', readonly: true, hidden: true %>
+           <%= f.submit "SportHD 8" , class: "button is-white is-light"   %>
+        <% end %>
+          </a>
+                  <a class="navbar-item">
+           <%= form_with model: @link do |f| %>
+          <%= f.text_field :url ,  :value => 'https://v3.sportsonline.to/channels/hd/hd9.php', readonly: true, hidden: true %>
+           <%= f.submit "SportHD 9" , class: "button is-white is-light"   %>
+        <% end %>
+          </a>
+          <hr class="navbar-divider">
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+    <%=  link_to "Terminar a sessão", destroy_user_session_path , method: :delete , class:"button is-danger  is-outlined"%>
+
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
 
 
 <br>
@@ -25,7 +154,6 @@
     </p>
   <%= form_with model: @link do |f| %>
  <%= f.text_field :url , class: "input is-link" , style: "width:30%;" %>
- <%= f.number_field :user_id, id: :link_user_id, value: current_user.id,type: :hidden %>
   <%= f.submit "submeter" , class: "button is-link"   %>
 <% end %>
 
@@ -55,4 +183,8 @@
 </body>
 </div>
 
+<footer>
+
+</footer>
 </html>
+
