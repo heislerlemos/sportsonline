@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-  get 'rooms/index'
+ # get 'rooms/index'
 #  get "links", to: "homes#index"
   get "links", to: "home#index"
   post "links", to: "home#create"
   put "links/:id", to: 'home#update'
-  resources :rooms
- resources :users
+ # resources :rooms
+  resources :users
 
   devise_for :users
-  devise_scope :user do  
+  devise_scope :users do  
    get '/users/sign_out' => 'devise/sessions#destroy'     
 end
 

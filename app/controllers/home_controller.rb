@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-
   before_action :authenticate_user!
   http_basic_authenticate_with name: "clemente", password: "admin2022user", only: :create
   
@@ -13,7 +12,8 @@ class HomeController < ApplicationController
     redirect_to '/signin' unless @current_user
     @rooms = Room.public_rooms
     @users = User.all
-    
+    user =  User.find_by_email(params[:email])
+          
 
   end
 
