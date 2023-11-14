@@ -12,9 +12,7 @@ class HomeController < ApplicationController
     redirect_to '/signin' unless @current_user
     @rooms = Room.public_rooms
     @users = User.all
-    user =  User.find_by_email(params[:email])
-          
-
+    
   end
 
  def create   

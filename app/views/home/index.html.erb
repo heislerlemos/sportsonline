@@ -183,14 +183,18 @@
 </body>
 </div>
 
-<footer>
+<footer style="color:white;">
+  <br>
 <div class="container">
   <h5> Hi <%= @current_user.email %> </h5>
+  <hr>
   <h4> Users </h4>
-  <%= render @users %>
+  <% @users.each do |user|  %> 
+    <%= user.email  %> 
+  <% end %>
   <hr>
   <h4> Rooms </h4>
-  <%= render @rooms %>
+  <%= render @rooms %><hr>
 </div>
 </footer>
 </html>
