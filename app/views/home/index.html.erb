@@ -189,13 +189,48 @@
   <h5> Hi <%= @current_user.email %> </h5>
   <hr>
   <h4> Users </h4>
-  <% @users.each do |user|  %> 
+
+  <%= turbo_stream_from "users" %>
+  <div id="users">
+   <% @users.each do |user|  %> 
     <%= user.email  %> 
   <% end %>
+  </div>
   <hr>
-  <h4> Rooms </h4>
-  <%= render @rooms %><hr>
+  <%= render partial: "layouts/new_room_form" %>
+<div class="columns">
+  <div class="column is-narrow">
+    <div class="box" style="width: 200px;">
+      <p class="title is-5">Salas</p>
+      <%= turbo_stream_from "rooms" %>
+      <div id="rooms">
+        <p class="subtitle"> <%= render @rooms %></p>
+        
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="box">
+      <p class="title is-5">
+      <% if @single_room %>
+        <%= @single_room.name %>
+      <% end %>
+        </p>
+        <p class="subtitle">
+        <%= turbo_stream_from @single_room %> <hr>
+        <%= render partial: 'layouts/new_message_form' %>
+        <div>
+  
+    <h6 class="name"> <%= message.user.email %> </h6>
+  
+  <%= message.content %>
 </div>
+
+      </p>
+    </div>
+  </div>
+</div>
+
 </footer>
 </html>
 

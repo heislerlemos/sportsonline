@@ -1,0 +1,6 @@
+<div class="message is-light">
+  <%= form_with(model: [@single_room ,@message], remote: true, class: "message-body" ) do |f| %>
+    <%= f.text_field :content, id: 'chat-text', class: "textarea ", autocomplete: 'off' %>
+    <%= f.submit data: { disable_with: false }, class: "button " %>
+  <% end %>
+</div>

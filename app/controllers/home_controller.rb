@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   before_action :authenticate_user!
-  http_basic_authenticate_with name: "clemente", password: "admin2022user", only: :create
+ # http_basic_authenticate_with name: "clemente", password: "admin2022user", only: :create
   
 
   def index 
@@ -12,7 +12,9 @@ class HomeController < ApplicationController
     redirect_to '/signin' unless @current_user
     @rooms = Room.public_rooms
     @users = User.all
-    
+     @room = Room.new
+    @message = Message.new
+
   end
 
  def create   
@@ -23,7 +25,10 @@ class HomeController < ApplicationController
     else   
       redirect_to root_path   
     
-    end   
+    end 
+
+     @current_user = current_user
+    @message = @current_user.messages.create(content: msg_params[:content], room_id: params[:room_id])
   end   
 
 
@@ -34,4 +39,7 @@ private
     params.require(:link).permit(:url, :user_id)   
   end   
 
+  def msg_params 
+  params.require(:message).permit(:content)
+  end 
 end
