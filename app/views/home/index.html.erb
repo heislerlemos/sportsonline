@@ -183,21 +183,17 @@
 </body>
 </div>
 
-<footer style="color:red;">
-  <br>
-<div class="container">
-  <h5> Hi <%= @current_user.email %> </h5>
-  <hr>
-  <h4> Users </h4>
-
-
+<footer>
+  <div class="container">
+    <br>
+  <h5 class="is-size-3 " style="color: white;"> Utilizador :  <%= @current_user.username %> </h5>
   <%= turbo_stream_from "users" %>
   <div id="users">
    <% @users.each do |user|  %> 
-    <%= user.email  %> 
+    <% user.email  %> 
   <% end %>
   </div>
-  <hr>
+  <br>
   <%= render partial: "layouts/new_room_form" %>
 <div class="columns">
   <div class="column is-narrow">
@@ -210,17 +206,27 @@
       </div>
     </div>
   </div>
+  <br>
   <div class="column">
-    <div class="box">
+    <div class="box" style="padding: 50px;" >
+        <h1> Numero de utilizador <%= @users.count %> </h1>
+      <% @users.each do |user| %>
+        <%= user.email %> <br>
+      <% end %>
+    </div>
+  </div>
+  <div class="column is-7" >
+    <div class="box"  style="width:750px;">
       <p class="title is-5">
+      <h1> Sports Online Chat </h1>
       <% if @single_room %>
-        <%= @single_room.name %>
+       Canal <%= @single_room.name %>
       <% end %>
         </p>
         <p class="subtitle">
         <%= turbo_stream_from @single_room %> <hr>
         
-        <div id="messages" >
+        <div id="messages" style=" Overflow-y:scroll; height: 200px; width:700px;">
             <%= render @messages %>
         </div>
 <%= render partial: 'layouts/new_message_form' %>

@@ -13,7 +13,7 @@ class HomeController < ApplicationController
     @rooms = Room.public_rooms
     @users = User.all
     @room = Room.new
-    @message = Message.new
+    @message = Message.new 
   
     @single_room = Room.find_by_id(1)   
     @messages = @single_room.messages

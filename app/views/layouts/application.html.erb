@@ -3,6 +3,18 @@
         background-size: 1em 1em;
         background-color: #111111;
         opacity: 1">
+
+  <style>
+  <%= ".msg-#{current_user&.id}" %> {
+  background-color: #3CB371 !important;
+  padding: 0px;
+  }
+  <%= ".cont-#{current_user&.id}" %> {
+  display: flex;
+  justify-content: flex-end
+  }
+  </style>
+
   <head>
     <title>Sportsonline</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
