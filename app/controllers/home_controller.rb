@@ -12,8 +12,11 @@ class HomeController < ApplicationController
     redirect_to '/signin' unless @current_user
     @rooms = Room.public_rooms
     @users = User.all
-     @room = Room.new
+    @room = Room.new
     @message = Message.new
+  
+    @single_room = Room.find_by_id(1)   
+    @messages = @single_room.messages
 
   end
 
@@ -27,8 +30,7 @@ class HomeController < ApplicationController
     
     end 
 
-     @current_user = current_user
-    @message = @current_user.messages.create(content: msg_params[:content], room_id: params[:room_id])
+ #   @message = @current_user.messages.create(content: msg_params[:content], room_id: params[:room_id])
   end   
 
 
@@ -40,6 +42,6 @@ private
   end   
 
   def msg_params 
-  params.require(:message).permit(:content)
+  params.permit(:content)
   end 
 end

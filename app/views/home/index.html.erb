@@ -183,12 +183,13 @@
 </body>
 </div>
 
-<footer style="color:white;">
+<footer style="color:red;">
   <br>
 <div class="container">
   <h5> Hi <%= @current_user.email %> </h5>
   <hr>
   <h4> Users </h4>
+
 
   <%= turbo_stream_from "users" %>
   <div id="users">
@@ -200,7 +201,7 @@
   <%= render partial: "layouts/new_room_form" %>
 <div class="columns">
   <div class="column is-narrow">
-    <div class="box" style="width: 200px;">
+    <div class="box" style="width: 200px; ">
       <p class="title is-5">Salas</p>
       <%= turbo_stream_from "rooms" %>
       <div id="rooms">
@@ -218,12 +219,15 @@
         </p>
         <p class="subtitle">
         <%= turbo_stream_from @single_room %> <hr>
-        <%= render partial: 'layouts/new_message_form' %>
+        
+        <div id="messages" >
+            <%= render @messages %>
+        </div>
+<%= render partial: 'layouts/new_message_form' %>
+  
+
+
         <div>
-  
-    <h6 class="name"> <%= message.user.email %> </h6>
-  
-  <%= message.content %>
 </div>
 
       </p>

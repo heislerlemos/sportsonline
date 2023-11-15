@@ -11,8 +11,10 @@ class RoomsController < ApplicationController
   @rooms = Room.public_rooms
   @users = User.all_except(@current_user)
   @room = Room.new
+
  @firstlink = current_user.links.last
   @message = Message.new
+@messages = @single_room.messages
 
   render "home/index"
 
